@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations - Dance Beat Studios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/logo.png" alt="Dance Beat Studios logo">
+        <div class="header-text">
+            <h1>Dance Beat Studios</h1>
+            <p>Your premier destination for dance classes in Rustington</p>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> | <a href="about.html">About</a> | 
+            <div class="dropdown">
+                <a href="classes.html">Classes</a>
+                <div class="dropdown-content">
+                    <a href="classes.html?class=ballet">Ballet</a>
+                    <a href="classes.html?class=jazz">Jazz</a>
+                    <a href="classes.html?class=tap">Tap</a>
+                    <a href="classes.html?class=modern">Modern</a>
+                    <a href="classes.html?class=zumba">Zumba</a>
+                    <a href="classes.html?class=private">Private Lessons</a>
+                    <a href="classes.html?class=stretch">Stretch Class</a>
+                    <a href="classes.html?class=tots">Dance Beat Tots</a>
+                    <a href="classes.html?class=core">Core and More</a>
+                </div>
+            </div>
+             | <a href="timetable.html">Timetable</a> | <a href="locations.html">Locations</a> | <a href="contact.html">Contact</a> | <a href="registration.html">Registration</a>
+        </nav>
+    </header>
+    <main>
+        <section class="locations">
+            <h2>Our Locations</h2>
+            <p>Find our dance class locations on the map below. Click on the markers for more details.</p>
+            <div id="map" style="height: 400px; margin: 1rem 0;"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Dance Beat Studios. All rights reserved.</p>
+        <p>Contact us at info@dancebeatstudios.com</p>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([50.805, -0.45], 11.5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker([50.80881, -0.48107]).addTo(map)
+            .bindPopup('East Preston Village Hall, Sea Road, East Preston');
+        L.marker([50.810, -0.505]).addTo(map)
+            .bindPopup('St Peters and St Pauls Church Hall, The Street, Rustington');
+        L.marker([50.812, -0.502]).addTo(map)
+            .bindPopup('Rustington Youth Centre, Woodlands Ave, Rustington');
+        L.marker([50.8096, -0.4804]).addTo(map)
+            .bindPopup('The Conservative Hall, Sea Road, East Preston');
+        L.marker([50.811, -0.507]).addTo(map)
+            .bindPopup('St Andrews Church Hall, Holmes Lane, Rustington');
+        L.marker([50.820, -0.410]).addTo(map)
+            .bindPopup('Durrington Community Centre, Durrington');
+    </script>
+</body>
+</html>

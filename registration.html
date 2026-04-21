@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Dance Beat Studios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/logo.png" alt="Dance Beat Studios logo">
+        <div class="header-text">
+            <h1>Dance Beat Studios</h1>
+            <p>Your premier destination for dance classes in Rustington</p>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> | <a href="about.html">About</a> | 
+            <div class="dropdown">
+                <a href="classes.html">Classes</a>
+                <div class="dropdown-content">
+                    <a href="classes.html?class=ballet">Ballet</a>
+                    <a href="classes.html?class=jazz">Jazz</a>
+                    <a href="classes.html?class=tap">Tap</a>
+                    <a href="classes.html?class=modern">Modern</a>
+                    <a href="classes.html?class=zumba">Zumba</a>
+                    <a href="classes.html?class=private">Private Lessons</a>
+                    <a href="classes.html?class=stretch">Stretch Class</a>
+                    <a href="classes.html?class=tots">Dance Beat Tots</a>
+                    <a href="classes.html?class=core">Core and More</a>
+                </div>
+            </div>
+             | <a href="timetable.html">Timetable</a> | <a href="locations.html">Locations</a> | <a href="contact.html">Contact</a> | <a href="registration.html">Registration</a>
+        </nav>
+    </header>
+    <main>
+        <section class="registration">
+            <h2>Registration</h2>
+            <p>Ready to join Dance Beat Studios? Please fill out this registration form and we'll send you a confirmation with any additional information needed.</p>
+            <form action="https://formsubmit.co/j.dean1991@hotmail.co.uk" method="POST" class="registration-form">
+                <!-- Personal Information -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="class-interest">Interested Class *</label>
+                        <select id="class-interest" name="class-interest" required>
+                            <option value="">-- Select a class --</option>
+                            <option value="Ballet">Ballet</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Tap">Tap</option>
+                            <option value="Modern">Modern</option>
+                            <option value="Zumba">Zumba</option>
+                            <option value="Private Lessons">Private Lessons</option>
+                            <option value="Stretch Class">Stretch Class</option>
+                            <option value="Dance Beat Tots">Dance Beat Tots</option>
+                            <option value="Core and More">Core and More</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Health Information -->
+                <fieldset>
+                    <legend>Health & Medical Information</legend>
+                    <div class="form-group">
+                        <label for="medical-conditions">Do you have any medical conditions we should be aware of?</label>
+                        <textarea id="medical-conditions" name="medical-conditions" rows="3" placeholder="e.g., asthma, arthritis, injuries, etc."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="allergies">Do you have any allergies?</label>
+                        <input type="text" id="allergies" name="allergies" placeholder="e.g., peanuts, latex, antibiotics, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="injuries">Do you have any current or past injuries?</label>
+                        <textarea id="injuries" name="injuries" rows="3" placeholder="Please describe any injuries and when they occurred"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="medications">Are you currently taking any medications?</label>
+                        <textarea id="medications" name="medications" rows="2" placeholder="List any medications you're taking"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="fit" name="fit" required>
+                            I confirm that I am physically fit to participate in dance classes
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="medical-approval" name="medical-approval">
+                            I have received medical clearance for physical activity
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Emergency Contact -->
+                <fieldset>
+                    <legend>Emergency Contact</legend>
+                    <div class="form-group">
+                        <label for="emergency-name">Emergency Contact Name *</label>
+                        <input type="text" id="emergency-name" name="emergency-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emergency-phone">Emergency Contact Phone *</label>
+                        <input type="tel" id="emergency-phone" name="emergency-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emergency-relation">Relationship *</label>
+                        <input type="text" id="emergency-relation" name="emergency-relation" placeholder="e.g., Parent, Spouse, Friend" required>
+                    </div>
+                </fieldset>
+
+                <!-- Terms -->
+                <fieldset>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="terms" name="terms" required>
+                            I agree to the terms and conditions *
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            I consent to my information being used for class administration *
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="button">Submit Registration</button>
+                <input type="hidden" name="_subject" value="New Student Registration - Dance Beat Studios">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://dancebeatstudios.com/contact.html">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Dance Beat Studios. All rights reserved.</p>
+        <p>Contact us at info@dancebeatstudios.com</p>
+    </footer>
+</body>
+</html>
