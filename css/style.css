@@ -193,10 +193,6 @@ nav a:hover {
 }
 
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 /* Main Content */
 main {
     max-width: 1200px;
