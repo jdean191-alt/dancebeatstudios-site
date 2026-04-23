@@ -648,3 +648,133 @@ footer p {
         padding: 0.4rem 0.8rem;
     }
 }
+.accordion details {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background: #fafafa;
+}
+
+.accordion summary {
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 0;
+}
+
+.accordion ul {
+    margin: 10px 0 0 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.accordion li {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Dropdown base */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    min-width: 180px;
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.dropdown-content a {
+    padding: 0.4rem 0.6rem;
+    white-space: nowrap;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: inline-block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .nav-links a,
+    .dropdown-toggle {
+        padding: 0.4rem 0;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .dropdown-content a {
+        padding-left: 1rem;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: flex;
+    }
+}
+
+/* Desktop dropdown on hover */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        flex-direction: column;
+    }
+}

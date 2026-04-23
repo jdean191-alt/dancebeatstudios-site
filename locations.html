@@ -7,7 +7,44 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        .accordion {
+            margin: 1rem 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+        .accordion-header {
+            background: #f7f7f7;
+            padding: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .accordion-header:hover {
+            background: #ececec;
+        }
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+            background: #fff;
+        }
+        .accordion-content ul {
+            padding-left: 1rem;
+        }
+        .accordion-content li {
+            margin-bottom: 0.5rem;
+        }
+        .location-links a {
+            color: #0077cc;
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <img class="logo" src="images/logo.png" alt="Dance Beat Studios logo">
@@ -34,35 +71,248 @@
              | <a href="timetable.html">Timetable</a> | <a href="locations.html">Locations</a> | <a href="contact.html">Contact</a> | <a href="registration.html">Registration</a>
         </nav>
     </header>
+
     <main>
         <section class="locations">
-            <h2>Our Locations</h2>
-            <p>Find our dance class locations on the map below. Click on the markers for more details.</p>
+            <h3>Our Locations</h3>
+            <p>Tap a venue below to see all classes held there. Scroll further to view the interactive map.</p>
+
+            <!-- ACCORDION START -->
+            <div class="accordion">
+
+                <!-- East Preston Village Hall -->
+                <div class="accordion-item" id="eastpreston">
+                    <div class="accordion-header">East Preston Village Hall</div>
+                    <div class="accordion-content">
+                        <p><strong>Address:</strong> Sea Road, East Preston</p>
+                        <p class="location-links">
+                            <a href="https://maps.google.com/?q=East+Preston+Village+Hall">Directions</a> |
+                            <a href="#map" onclick="openPopup('eastpreston')">View on Map</a>
+                        </p>
+                        <ul>
+                            <li><strong>Monday</strong> — 10:40–11:25 — Zumba</li>
+                            <li><strong>Monday</strong> — 11:30 — Core & More</li>
+                            <li><strong>Thursday</strong> — 09:00 — Core & More</li>
+                            <li><strong>Friday</strong> — 09:15–10:15 — Adult Jazz</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- St Peters & St Pauls -->
+                <div class="accordion-item" id="stpeterspauls">
+                    <div class="accordion-header">St Peters & St Pauls Church Hall</div>
+                    <div class="accordion-content">
+                        <p><strong>Address:</strong> The Street, Rustington</p>
+                        <p class="location-links">
+                            <a href="https://maps.google.com/?q=St+Peters+and+St+Pauls+Church+Hall+Rustington">Directions</a> |
+                            <a href="#map" onclick="openPopup('stpeterspauls')">View on Map</a>
+                        </p>
+                        <ul>
+                            <li><strong>Monday</strong> — 15:45–16:15 — Dance Beat Tots</li>
+                            <li><strong>Monday</strong> — 18:00–18:45 — Modern Grade 2</li>
+                            <li><strong>Thursday</strong> — 17:15 — Adult Beginners Tap</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- St Peters Sea Road -->
+                <div class="accordion-item" id="stpeters">
+                    <div class="accordion-header">St Peters, Sea Road</div>
+                    <div class="accordion-content">
+                        <p><strong>Address:</strong> Sea Road, East Preston</p>
+                        <p class="location-links">
+                            <a href="https://maps.google.com/?q=St+Peters+Sea+Road+East+Preston">Directions</a> |
+                            <a href="#map" onclick="openPopup('stpeters')">View on Map</a>
+                        </p>
+                        <ul>
+                            <li><strong>Monday</strong> — 16:00–16:45 — Primary Ballet, Modern & Tap</li>
+                            <li><strong>Monday</strong> — 16:45–17:30 — Tap Grade 2</li>
+                            <li><strong>Thursday</strong> — 16:00–16:30 — Tap Grade 1</li>
+                            <li><strong>Thursday</strong> — 16:30–17:00 — Ballet Grade 1</li>
+                            <li><strong>Thursday</strong> — 17:00–17:30 — Primary Ballet, Tap & Modern</li>
+                            <li><strong>Thursday</strong> — 18:00–19:00 — Ballet Grade 5</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- St Andrews -->
+                <div class="accordion-item" id="standrews">
+                    <div class="accordion-header">St Andrews Church Hall</div>
+                    <div class="accordion-content">
+                        <p><strong>Address:</strong> Holmes Lane, Rustington</p>
+                        <p class="location-links">
+                            <a href="https://maps.google.com/?q=St+Andrews+Church+Hall+Rustington">Directions</a> |
+                            <a href="#map" onclick="openPopup('standrews')">View on Map</a>
+                        </p>
+                        <ul>
+                            <li><strong>Tuesday</strong> — 17:15–18:00 — Tap Grade 4</li>
+                            <li><strong>Tuesday</strong> — 18:00–19:00 — Modern Grade 5</li>
+                            <li><strong>Thursday</strong> — 17:15–18:00 — Ballet Grade 2</li>
+                            <li><strong>Thursday</strong> — 18:05–18:50 — Ballet Grade 4</li>
+                            <li><strong>Thursday</strong> — 18:50–19:30 — Stretch Class</li>
+                            <li><strong>Thursday</strong> — 19:35–20:20 — Adult Tap</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Durrington -->
+                <div class="accordion-item" id="durrington">
+                    <div class="accordion-header">Durrington Community Centre</div>
+                    <div class="accordion-content">
+                        <p><strong>Address:</strong> Durrington</p>
+                        <p class="location-links">
+                            <a href="https://maps.google.com/?q=Durrington+Community+Centre">Directions</a> |
+                            <a href="#map" onclick="openPopup('durrington')">View on Map</a>
+                        </p>
+                        <ul>
+                            <li><strong>Tuesday</strong> — 11:00 — Zumba</li>
+                            <li><strong>Thursday</strong> — 18:30 — Core & More</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Samuel Wickens Centre -->
+                <div class="accordion-item" id="samuelwickens">
+                    <div class="accordion-header">Samuel Wickens Centre</div>
+                    <div class="accordion-content">
+                        <p><strong>Address:</strong> Rustington</p>
+                        <p class="location-links">
+                            <a href="https://maps.google.com/?q=Samuel+Wickens+Centre+Rustington">Directions</a> |
+                            <a href="#map" onclick="openPopup('samuelwickens')">View on Map</a>
+                        </p>
+                        <ul>
+                            <li><strong>Tuesday</strong> — 16:45–17:30 — Ballet Grade 5</li>
+                            <li><strong>Tuesday</strong> — 17:30–18:30 — Teen Contemporary</li>
+                            <li><strong>Tuesday</strong> — 18:30–19:00 — Stretch & Strengthening</li>
+                            <li><strong>Tuesday</strong> — 19:00 — Improvers/Advanced Tap</li>
+                            <li><strong>Tuesday</strong> — 19:45 — Adult Ballet</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- WMCS -->
+                <div class="accordion-item" id="wmcs">
+                    <div class="accordion-header">W.M.C.S Headquarters, Goring</div>
+                    <div class="accordion-content">
+                        <p><strong>Address:</strong> Goring</p>
+                        <p class="location-links">
+                            <a href="https://maps.google.com/?q=WMCS+Headquarters+Goring">Directions</a> |
+                            <a href="#map" onclick="openPopup('wmcs')">View on Map</a>
+                        </p>
+                        <ul>
+                            <li><strong>Tuesday</strong> — 13:30 — Improvers Tap</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Arundel -->
+                <div class="accordion-item" id="arundel">
+                    <div class="accordion-header">Victoria Institute, Arundel</div>
+                    <div class="accordion-content">
+                        <p><strong>Address:</strong> Arundel</p>
+                        <p class="location-links">
+                            <a href="https://maps.google.com/?q=Victoria+Institute+Arundel">Directions</a> |
+                            <a href="#map" onclick="openPopup('arundel')">View on Map</a>
+                        </p>
+                        <ul>
+                            <li><strong>Monday</strong> — 18:15–19:00 — Adult Tap</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- ACCORDION END -->
+
+            <h3>Map</h3>
             <div id="map" style="height: 400px; margin: 1rem 0;"></div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Dance Beat Studios. All rights reserved.</p>
         <p>Contact us at info@dancebeatstudios.com</p>
     </footer>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <script>
-        const map = L.map('map').setView([50.805, -0.45], 11.5);
+        // Accordion behaviour
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Map setup
+        const map = L.map('map').setView([50.810, -0.480], 12);
+
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
-        L.marker([50.80881, -0.48107]).addTo(map)
-            .bindPopup('East Preston Village Hall, Sea Road, East Preston');
-        L.marker([50.810, -0.505]).addTo(map)
-            .bindPopup('St Peters and St Pauls Church Hall, The Street, Rustington');
-        L.marker([50.812, -0.502]).addTo(map)
-            .bindPopup('Rustington Youth Centre, Woodlands Ave, Rustington');
-        L.marker([50.8096, -0.4804]).addTo(map)
-            .bindPopup('The Conservative Hall, Sea Road, East Preston');
-        L.marker([50.811, -0.507]).addTo(map)
-            .bindPopup('St Andrews Church Hall, Holmes Lane, Rustington');
-        L.marker([50.820, -0.410]).addTo(map)
-            .bindPopup('Durrington Community Centre, Durrington');
+
+        // Marker references for "View on Map"
+        const markers = {};
+
+        function addMarker(id, coords, popup) {
+            markers[id] = L.marker(coords).addTo(map).bindPopup(popup);
+        }
+
+        function openPopup(id) {
+            const marker = markers[id];
+            if (marker) {
+                map.setView(marker.getLatLng(), 14);
+                marker.openPopup();
+            }
+        }
+
+        // Add markers
+        addMarker('eastpreston', [50.80881, -0.48107], `
+            <b>East Preston Village Hall</b><br>
+            Monday: Zumba, Core & More<br>
+            Thursday: Core & More<br>
+            Friday: Adult Jazz
+        `);
+
+        addMarker('stpeterspauls', [50.810, -0.505], `
+            <b>St Peters & St Pauls Church Hall</b><br>
+            Monday: Tots, Modern G2<br>
+            Thursday: Adult Beginners Tap
+        `);
+
+        addMarker('stpeters', [50.8096, -0.4804], `
+            <b>St Peters, Sea Road</b><br>
+            Monday: Primary Ballet/Modern/Tap, Tap G2<br>
+            Thursday: Tap G1, Ballet G1, Primary Combo, Ballet G5
+        `);
+
+        addMarker('standrews', [50.811, -0.507], `
+            <b>St Andrews Church Hall</b><br>
+            Tuesday: Tap G4, Modern G5<br>
+            Thursday: Ballet G2, Ballet G4, Stretch, Adult Tap
+        `);
+
+        addMarker('durrington', [50.820, -0.410], `
+            <b>Durrington Community Centre</b><br>
+            Tuesday: Zumba<br>
+            Thursday: Core & More
+        `);
+
+        addMarker('samuelwickens', [50.8105, -0.5065], `
+            <b>Samuel Wickens Centre</b><br>
+            Tuesday: Ballet G5, Teen Contemporary, Stretch, Adv Tap, Adult Ballet
+        `);
+
+        addMarker('wmcs', [50.817, -0.432], `
+            <b>W.M.C.S Headquarters</b><br>
+            Tuesday: Improvers Tap
+        `);
+
+        addMarker('arundel', [50.855, -0.553], `
+            <b>Victoria Institute, Arundel</b><br>
+            Monday: Adult Tap
+        `);
     </script>
+
 </body>
 </html>
